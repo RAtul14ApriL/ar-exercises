@@ -9,4 +9,16 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
-# Your code goes here ...
+print "Please enter a store name\n"
+
+print ">> "
+
+input = gets.chomp
+
+def create_store(input)
+  Store.create(name: input)
+end
+
+puts create_store(input)
+
+puts Store.count
