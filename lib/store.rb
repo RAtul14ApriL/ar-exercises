@@ -6,13 +6,13 @@ class Store < ActiveRecord::Base
 
   def check_name
     if (!self.name || self.name.length < 3)
-      puts errors.add(:name, "Must enter at least 3 letters for a name!")
+      errors.add(:name, "Must enter at least 3 letters for a name!")
     end
   end
 
   def check_apparel
     if (!self.mens_apparel && !self.womens_apparel)
-      puts errors.add(:mens_apparel, "Must choose an apparel type!")
+      errors.add(:mens_apparel, "Must choose an apparel type!")
     end
   end
 end

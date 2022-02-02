@@ -16,9 +16,12 @@ print ">> "
 input = gets.chomp
 
 def create_store(input)
-  Store.create(name: input)
+  store = Store.create(name: input)
+  store.errors.full_messages.each{|err|
+    puts "ERROR: #{err}"
+  }
 end
 
-puts create_store(input)
+create_store(input)
 
-puts Store.count
+# puts Store.count
